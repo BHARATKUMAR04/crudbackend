@@ -8,10 +8,11 @@ app.use(express.json());
 app.use(express.urlencoded({extended:true}));
 app.use(cors());
 connection();
+const PORT = process.env.PORT || 5000;
 app.use('/uploads',express.static("./uploads"));
 app.use('/files',express.static("./public/files"));
 app.use(uRouter);
 
-app.listen(process.env.Port ,()=>{
-    console.log(`app is running on port:${process.env.Port}`)
+app.listen(PORT,()=>{
+    console.log(`app is running on port:${PORT}`)
 })
